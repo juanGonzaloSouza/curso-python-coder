@@ -30,14 +30,16 @@ class Client:
 def init_user():
     print(f'Creación de cliente \n')
     name = input("Ingresa tu nombre ")
-    if name:
+    if name.isalpha():
         surname = input("Ingresa tu apellido ")
-        if surname:
-            id = input("Ingresa tu cedula ")
+        if surname.isalpha():
+            id = int(input("Ingresa tu cedula ") or None)
             if id:
                 payment = input("¿Con qué va a pagar? ")
                 if payment:
                     cliente = Client(name,surname,id,payment)
+                    input(cliente)
+                    return cliente
                 else: 
                     print("Error")
             else: 
@@ -47,8 +49,6 @@ def init_user():
     else: 
         print("Error")
 
-    input(cliente)
-    return cliente
 
 def purchases():
     for item in purchase:
