@@ -1,4 +1,4 @@
-from paquete.compra import *
+from paquete.compra.compra import *
 purchase = []
 
 class Client:
