@@ -1,0 +1,30 @@
+{% extends 'layout/page.html' %}
+
+{% block content %}
+  <h1>Review List</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Text</th>
+        <th>User</th>
+        <th>Product</th>
+        <th>Positive Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for review in reviews %}
+        <tr>
+          <td>{{ review.text }}</td>
+          <td>{{ review.name }}</td>
+          <td>{{ review.product }}</td>
+          <td>{{ review.is_positive }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No reviews found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
