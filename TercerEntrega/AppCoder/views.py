@@ -44,3 +44,11 @@ def create_review(request):
     else:
         form = ReviewForm()
     return render(request, 'layout/forms/reviews.html', {'form': form})
+
+def user_search(request):
+    if request.method == 'POST': # si el formulario ha sido enviado
+        name = request.POST.get('name') # obtener el nombre ingresado por el usuario en el formulario
+        users = User.objects.filter(name__icontains=name) # buscar usuarios cuyo nombre contenga el nombre ingresado
+        return render(request, 'layout/views/user_search_results.html', {'users': users, 'name': name}) # mostrar los resultados de la búsqueda
+    else: # si el formulario no ha sido enviado, simplemente mostrar el formulario vacío
+        return render(request, 'layout/forms/user_search.html')

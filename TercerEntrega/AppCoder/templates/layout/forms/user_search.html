@@ -1,0 +1,10 @@
+{% extends 'layout/page.html'%}
+
+{% block content %}
+<h2>Buscar usuarios</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Nombre del usuario">
+    <button type="submit">Buscar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout/page.html' %}
+
+{% block content %}
+  {% if users %}
+    <h2>Usuarios encontrados:</h2>
+    <ul>
+      {% for user in users %}
+        <li>{{ user.name }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No se encontraron usuarios con ese nombre.</p>
+  {% endif %}
+{% endblock %}
