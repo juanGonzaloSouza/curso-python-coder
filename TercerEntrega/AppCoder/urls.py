@@ -6,8 +6,10 @@ urlpatterns = [
     path('users/', create_user, name='create_user'),
     path('products/', create_product, name='create_product'),
     path('reviews/', create_review, name='create_review'),
+    path('users/search/', user_search, name='user_search'),
+
+
     path('products/list/', product_list, name='product_list'),
     path('users/list/', user_list, name='user_list'),
     path('reviews/list/', review_list, name='review_list'),
-    path('users/search/', user_search, name='user_search'),
 ]
